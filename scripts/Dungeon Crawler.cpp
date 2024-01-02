@@ -2,8 +2,8 @@
 #include <chrono>
 #include <thread>
 #include <limits>
-
-using namespace std;
+#include <string>
+#include "Character.h"
 
 bool ValidClamp(int value)
 {
@@ -23,19 +23,21 @@ bool ValidClamp(int value)
 
 int main()
 {
-    string name;
+    std::string name;
     char whatever;
     int numberOfEnemies;
 
 
     // Main Story Line
-    cout << "JOUA'S DUNGEON\n";
-    cout << "\n";
+    cout << "JOUA'S DUNGEONSSSSSS\n" << "\n";
 
     cout << "Whats's your name?\n";
     cin >> name;
 
-    cout << "Are you ready for your Journey? S/N\n";
+    // Creates new Character
+    Character player = Character(name);
+    cout << player << ;
+    cout << "Are you ready for your Journey " << player.GetName() << "? S/N\n";
     cin >> whatever;
 
     if ((whatever != 's') && (whatever != 'S')) {
