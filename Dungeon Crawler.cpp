@@ -25,30 +25,12 @@ bool ValidEnemyClamp(int value)
     else return true;
 }
 
-Enemy CreateRandomEnemy() {
-    int randSize = rand() % Sizes::Count; // in the range 1 to enumSize
-
-    int randHealth = rand() % MAX_HEALTH + 1; // in the range 1 to healthMax
-
-    int randDamage = rand() % MAX_DAMAGE + 1; // in the range 1 to damageMax
-
-    if (randSize == 0) {
-        return Enemy(randHealth, randDamage, Sizes::Small);
-    }
-    if (randSize == 1) {
-        return Enemy(randHealth, randDamage, Sizes::Medium);
-    }
-    if (randSize == 2) {
-        return Enemy(randHealth, randDamage, Sizes::Large);
-    }
-}
-
 std::vector<Enemy> CreateEnemies(int numberOfEnemies) {
 
     std::vector<Enemy> enemies = std::vector<Enemy>();
 
     for (int i = 0; i < numberOfEnemies; i++) {
-        enemies.push_back(CreateRandomEnemy());
+        enemies.push_back( CreateRandomEnemy() );
         /*std::cout << "Enemy " << i << ": " << enemies[i].GetCurrentHealth()
             << " Health and " << enemies[i].GetDamage() 
             << " Damage (" << sizeEnumToStr(enemies[i].GetSize())  << " Size)\n";
@@ -91,8 +73,8 @@ bool Battle(Character& character, Enemy& enemy) {
 int main()
 {
     // Flavour Text
-    Log("JOUA'S Dungeon Crawler\n\n");
-    Log("Whats's your name?\n");
+    Log("JOUA's Dungeon Crawler\n");
+    Log("Whats's your name?");
 
     // Creates new Character with Name and Damage
     std::string name;
@@ -118,12 +100,11 @@ int main()
     // Allocate the Enemies
     std::vector<Enemy> enemies = CreateEnemies(numberOfEnemies);
 
-    // Array representing how many enemies have been defeated
-    int enemiesDefeated[3] = {
-        0,  // index 0 = Small enemies
-        0,  // index 1 = Medium enemies
-        0,  // index 2 = Large enemies
-    };
+    // Array representing how many enemies have been defeated. We are indexing the array based on the enemy Size. See Sizes.h and follow the enum values for the index
+    std::vector<int> enemiesDefeated;
+    for (int i = 0; i < Sizes::Count; i++) {
+        enemiesDefeated.push_back(0);
+    }
 
     // Battle each of them.
     bool victory = true;
