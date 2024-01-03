@@ -10,28 +10,8 @@ enum Sizes
 	Count, // For sake of tracking how many enums we have. Keep it at the bottom
 };
 
-// Converts int to Size Enum name in string
-const std::string& sizeEnumToStr(int size)
-{
-	std::string str("unknown");
-	switch (size)
-	{
-	case 0: { str = "Small"; } break;
-	case 1: { str = "Medium"; } break;
-	case 2: { str = "Large"; } break;
-	case 3: { str = "ExtraLarge"; } break;
-	}
-	return str;
-}
+// Converts int to Sizes Enum string name 
+const std::string& sizeEnumToStr(int size);
 
 // Converts int to Sizes Enum
-Sizes sizeIntToEnum(int size)
-{
-	switch (size)
-	{
-	case 0: { return Small; } break;
-	case 1: { return Medium; } break;
-	case 2: { return Large; } break;
-	case 3: { return ExtraLarge; } break;
-	}
-}
+Sizes sizeIntToEnum(int size);

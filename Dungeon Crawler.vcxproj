@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Contants.cpp" />
     <ClCompile Include="Dungeon Crawler.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Sizes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />

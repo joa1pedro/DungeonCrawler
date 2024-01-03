@@ -30,7 +30,7 @@ std::vector<Enemy> CreateEnemies(int numberOfEnemies) {
     std::vector<Enemy> enemies = std::vector<Enemy>();
 
     for (int i = 0; i < numberOfEnemies; i++) {
-        enemies.push_back( CreateRandomEnemy() );
+        enemies.push_back( RandomEnemyFactory() );
         /*std::cout << "Enemy " << i << ": " << enemies[i].GetCurrentHealth()
             << " Health and " << enemies[i].GetDamage() 
             << " Damage (" << sizeEnumToStr(enemies[i].GetSize())  << " Size)\n";

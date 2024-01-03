@@ -9,31 +9,16 @@ private:
 	int _damage = 10;
 
 public:
+	//Constructor
 	Character(std::string name, int damage);
 
-	const std::string& GetName() {
-		return _name;
-	}
+	//Getters
+	const std::string& GetName();
 
-	int GetCurrentHealth() {
-		return _health;
-	}
+	int GetCurrentHealth();
 
-	int GetDamage() {
-		return _damage;
-	}
+	int GetDamage();
 
-	void TakeDamage(int damage) {
-		if (_health <= 0) {
-			std::cout << "Character is already Dead\n";
-			return;
-		}
-		_health = _health - damage;
-	}
+	//Methods
+	void TakeDamage(int damage);
 };
-
-// Constructor for a Character, Health default is 100
-Character::Character(std::string name, int damage) {
-	_name = name;
-	_damage = damage;
-}
