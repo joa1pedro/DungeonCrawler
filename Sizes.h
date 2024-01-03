@@ -11,7 +11,7 @@ enum Sizes
 };
 
 // Converts int to Size Enum name in string
-std::string sizeEnumToStr(int size)
+const std::string& sizeEnumToStr(int size)
 {
 	std::string str("unknown");
 	switch (size)

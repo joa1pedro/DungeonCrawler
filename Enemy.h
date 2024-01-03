@@ -3,6 +3,7 @@
 
 class Enemy
 {
+private:
 	int _health = 100;
 	int _damage = 1;
 	Sizes _size = Sizes::Small;

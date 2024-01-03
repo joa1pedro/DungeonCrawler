@@ -58,7 +58,7 @@ bool Battle(Character& character, Enemy& enemy) {
         if (enemy.GetCurrentHealth() > 0) {
             character.TakeDamage(enemy.GetDamage());
 
-            // If you died, return false
+            // If you died, return false (you lose)
             if (character.GetCurrentHealth() <= 0) {
                 Log("Oh dear you died");
                 return false;
@@ -106,7 +106,7 @@ int main()
         enemiesDefeated.push_back(0);
     }
 
-    // Battle each of them.
+    // Battle each of them. Note that your player can die inside Battle() and return without a victory
     bool victory = true;
     for (int i = 0; i < enemies.size(); i++) {
         if (player.GetCurrentHealth() <= 0) {

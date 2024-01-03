@@ -3,6 +3,7 @@
 
 class Character
 {
+private:
 	std::string _name;
 	int _health = 100;
 	int _damage = 10;
@@ -10,7 +11,7 @@ class Character
 public:
 	Character(std::string name, int damage);
 
-	std::string GetName() {
+	const std::string& GetName() {
 		return _name;
 	}
 
